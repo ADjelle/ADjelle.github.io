@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Externe CSS: -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Interne CSS: -->
+    <style>
+        #video {
+            margin-top: -150px;
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+
+    <title>Home</title>
+</head>
+
+<body id="overflow-hidden">
+    <!-- Navigatie menu: -->
+    <header>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <img width="64px" style="padding-right: 15px;" src="images/Rust_Logo.png" alt="Rust Logo">
+                </li>
+
+                <li>
+                    <a href=index.html target="_self">Home</a>
+                </li>
+                <li>
+                    <a href="over.html" target="_self">Over</a>
+                </li>
+                <li>
+                    <a href="tipsNtricks.html" target="_self">Tips en tricks</a>
+                </li>
+                <li>
+                    <a href="#" target="_self">Wapens</a>
+                </li>
+                <li>
+                    <a href="#" target="_self">Gebouwen</a>
+                </li>
+                <li>
+                    <a href="#" target="_self">Skins</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper" id="overflow-hidden">
+        <header class="wrapper-background">
+            <img class="background-img" src="images/Rust background v1.jpg" alt="Background">
+
+            <!-- Rust officiële trailer: -->
+            <div style="text-align: center;">
+                <video id="video" controls>
+                    <source src="videos/Rust - Official Trailer.mp4" type="video/mp4">
+                </video>
+            </div>
+        </header>
+    </div>
+</body>
+
+</html>

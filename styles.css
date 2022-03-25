@@ -1,0 +1,254 @@
+/* Basis HTML tags: */
+
+/* Hierdoor wordt bij elke nieuwe HTML tag de margin en padding op 0 gezet in de plaats van de waarden te inheriten. */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-x: hidden;
+    background-color: rgb(20, 20, 20);
+    color: rgb(215, 215, 215)
+}
+
+p {
+    font-style: fantasy, Arial;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 16px;
+    color: rgb(215, 215, 215);
+}
+
+a {
+    color: yellow;
+}
+
+/* Zorgt ervoor dat er geen x en y-scrollbars aanwezig zijn. */
+#overflow-hidden {
+    overflow: hidden;
+}
+
+/* Wrapper: */
+/* Een wrapper kan je het best interpreteren als een body in een body. */
+/* Deze wrapper wordt gebruikt voor een parallax scroll effect en een afbeelding die de achtergrond bedekt. */
+div.wrapper {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 91.5vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    perspective: 300px;
+    background-color: rgb(20, 20, 20);
+}
+
+div.wrapper .wrapper-background {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 102%;
+    transform-style: preserve-3d;
+    z-index: -998;
+}
+
+
+img.background-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: translateZ(-300px) scale(2);
+    z-index: -999;
+}
+
+div.wrapper .wrapper-background .background-title {
+    font-family: fantasy, Arial;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 100px;
+    text-shadow: 0 5px 10px rgb(0, 0, 0);
+    color: rgb(215, 215, 215);
+}
+
+/* Vullen van de achtergrond */
+#background-filler {
+    background-color: rgb(20, 20, 20);
+}
+
+/* Normale titels: */
+.title {
+    font-family: fantasy, Arial;
+    margin-left: 1rem;
+    font-size: 40px;
+    font-weight: lighter;
+    color: rgb(168, 22, 22);
+    padding-top: 10px;
+}
+
+.subtitle {
+    font-family: fantasy, Arial;
+    margin-left: 1rem;
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgb(168, 22, 22);
+    padding-top: 10px;
+}
+
+/* Navigatie menu: */
+header nav.nav-bar {
+    margin: 0;
+    font-size: 24px;
+    font-family: fantasy, Arial;
+    font-weight: 500;
+}
+
+header nav.nav-bar ul {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: rgb(58, 7, 7);
+}
+
+header nav.nav-bar ul li {
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+header nav.nav-bar ul li a {
+    margin-right: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(215, 215, 215);
+}
+
+/* Onderlijn hover effect van het navigatiemenu */
+header nav.nav-bar ul li a:hover {
+    padding-bottom: 8px;
+    border-bottom: 3px solid rgb(215, 215, 215);
+}
+
+/* Logo navigatie menu */
+header nav.nav-bar ul li img {
+    width: 30px;
+}
+
+/* Sociale menu: */
+footer nav.socials-menu {
+    background-color: rgb(15, 15, 15);
+    border-top: 3px solid rgb(168, 22, 22);
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+footer nav.socials-menu table tr td {
+    font-size: 15px;
+    font-family: fantasy, Arial;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+/* Kleur veranderings effect van het socials menu */
+footer nav.socials-menu table tr td:hover {
+    color: rgb(168, 22, 22)
+}
+
+/* Titel van het socials menu */
+footer nav.socials-menu .socials-title {
+    color: rgb(168, 22, 22);
+    text-align: center;
+    font-family: fantasy, Arial;
+    font-size: 30px;
+    font-weight: lighter;
+    padding-bottom: 20px;
+}
+
+/* Logo's van het socials menu */
+footer nav.socials-menu img.socials-logo {
+    height: 64px;
+    width: 64px;
+}
+
+
+/* Aanpassingen voor mobiele apparaten */
+@media (max-width: 700px) {
+    div.wrapper {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        height: 91.5vh;
+        width: 100vw;
+        overflow-y: scroll;
+    }
+
+    img.background-img {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        z-index: -999;
+    }
+
+    /* Onderlijn hover effect van het navigatiemenu */
+    header nav.nav-bar ul li a:hover {
+        padding: 0;
+        border-bottom: 2px solid rgb(215, 215, 215);
+    }
+
+
+    header nav.nav-bar ul li a {
+        margin-right: 10px;
+    }
+
+    /* Logo navigatie menu */
+    header nav.nav-bar ul li img {
+        width: 20px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    footer nav.socials-menu {
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+
+    /* Logo's van het socials menu */
+    footer nav.socials-menu img.socials-logo {
+        height: 32px;
+        width: 32px;
+    }
+
+    footer nav.socials-menu table tr td {
+        font-size: 12px;
+        font-family: fantasy, Arial;
+        margin: 0;
+        text-align: center;
+        list-style: none;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    footer nav.socials-menu .socials-title {
+        font-size: 20px;
+    }
+
+    div.wrapper .wrapper-background .background-title {
+        font-size: 50px;
+    }
+}
