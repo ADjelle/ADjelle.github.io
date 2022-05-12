@@ -12,10 +12,9 @@
     <!-- Interne CSS: -->
     <style>
         #video {
-            margin-top: -150px;
+            margin: 0 auto;
             position: relative;
-            width: 400px;
-            height: 400px;
+            height: 40%;
         }
     </style>
 
@@ -28,11 +27,13 @@
         <nav class="nav-bar">
             <ul>
                 <li>
-                    <img width="64px" style="padding-right: 15px;" src="images/Rust_Logo.png" alt="Rust Logo">
+                    <a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
+                        <img width="64px" style="vertical-align: bottom;" src="images/Rust_Logo.png" alt="Rust Logo">
+                    </a>
                 </li>
 
                 <li>
-                    <a href=index.html target="_self">Home</a>
+                    <a class="selected" href=index.html target="_self">Home</a>
                 </li>
                 <li>
                     <a href="over.html" target="_self">Over</a>
@@ -47,7 +48,7 @@
                     <a href="#" target="_self">Gebouwen</a>
                 </li>
                 <li>
-                    <a href="#" target="_self">Skins</a>
+                    <a href="skins.html" target="_self">Skins</a>
                 </li>
             </ul>
         </nav>
@@ -58,11 +59,9 @@
             <img class="background-img" src="images/Rust background v1.jpg" alt="Background">
 
             <!-- Rust officiële trailer: -->
-            <div style="text-align: center;">
-                <video id="video" controls>
-                    <source src="videos/Rust - Official Trailer.mp4" type="video/mp4">
-                </video>
-            </div>
+            <video id="video" controls poster="images/Rust background v5.jpg">
+                <source src="videos/Rust - Official Trailer.mp4" type="video/mp4">
+            </video>
         </header>
     </div>
 </body>

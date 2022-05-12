@@ -1,26 +1,44 @@
+/* Root: */
+/* Met de root kan je variabelen instellen wat betekent dat je minder dingen opnieuw moet coderen. */
+:root {
+    --clr-dark-red: rgb(58, 7, 7);
+    --clr-light-red: rgb(168, 22, 22);
+    --clr-white: rgb(215, 215, 215);
+    --clr-selected: rgb(196, 41, 41);
+    --clr-background: rgb(20, 20, 20);
+}
+
+@viewport {
+    zoom: 1;
+    width: extend-to-zoom;
+}
+
 /* Basis HTML tags: */
 
-/* Hierdoor wordt bij elke nieuwe HTML tag de margin en padding op 0 gezet in de plaats van de waarden te inheriten. */
+/* Hierdoor wordt bij elke nieuwe HTML tag deze code geplaatst behalve als je er iets anders inzet. */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: 0;
 }
 
 body {
+    font-size: 16px;
     margin: 0;
     padding: 0;
     border: 0;
     overflow-x: hidden;
-    background-color: rgb(20, 20, 20);
-    color: rgb(215, 215, 215)
+    background-color: var(--clr-background);
+    color: var(--clr-white);
 }
 
 p {
     font-style: fantasy, Arial;
     margin-left: 1rem;
     margin-right: 1rem;
-    font-size: 16px;
-    color: rgb(215, 215, 215);
+    font-size: min(16px, 70%);
+    color: var(--clr-white);
 }
 
 a {
@@ -39,13 +57,12 @@ div.wrapper {
     margin: 0;
     padding: 0;
     border: 0;
-    height: 91.5vh;
+    height: 93.5vh;
     width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
     perspective: 300px;
-    background-color: rgb(20, 20, 20);
 }
 
 div.wrapper .wrapper-background {
@@ -55,32 +72,36 @@ div.wrapper .wrapper-background {
     align-items: center;
     height: 100%;
     width: 102%;
+    z-index: -999;
     transform-style: preserve-3d;
-    z-index: -998;
 }
 
 
 img.background-img {
     position: absolute;
+    object-position: center;
+    object-fit: cover;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    z-index: -998;
     transform: translateZ(-300px) scale(2);
-    z-index: -999;
+    transform-style: preserve-3d;
 }
 
 div.wrapper .wrapper-background .background-title {
+    text-align: center;
     font-family: fantasy, Arial;
     letter-spacing: 5px;
     text-transform: uppercase;
     font-size: 100px;
-    text-shadow: 0 5px 10px rgb(0, 0, 0);
-    color: rgb(215, 215, 215);
+    text-shadow: 0 5px 10px black;
+    color: white;
 }
 
 /* Vullen van de achtergrond */
 #background-filler {
-    background-color: rgb(20, 20, 20);
+    background-color: var(--clr-background);
+
 }
 
 /* Normale titels: */
@@ -89,7 +110,7 @@ div.wrapper .wrapper-background .background-title {
     margin-left: 1rem;
     font-size: 40px;
     font-weight: lighter;
-    color: rgb(168, 22, 22);
+    color: var(--clr-light-red);
     padding-top: 10px;
 }
 
@@ -98,7 +119,7 @@ div.wrapper .wrapper-background .background-title {
     margin-left: 1rem;
     font-size: 25px;
     font-weight: lighter;
-    color: rgb(168, 22, 22);
+    color: var(--clr-light-red);
     padding-top: 10px;
 }
 
@@ -108,34 +129,44 @@ header nav.nav-bar {
     font-size: 24px;
     font-family: fantasy, Arial;
     font-weight: 500;
+    background-color: var(--clr-dark-red);
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
 }
 
 header nav.nav-bar ul {
     position: relative;
     text-align: center;
     margin: 0;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    background-color: rgb(58, 7, 7);
 }
 
 header nav.nav-bar ul li {
-    margin: 0;
+    padding: 0px;
+    margin-right: 50px;
     list-style: none;
     display: inline-block;
 }
 
 header nav.nav-bar ul li a {
-    margin-right: 50px;
     text-decoration: none;
     text-transform: uppercase;
-    color: rgb(215, 215, 215);
+    color: var(--clr-white);
 }
 
 /* Onderlijn hover effect van het navigatiemenu */
+
+header nav.nav-bar ul li a.selected {
+    color: var(--clr-selected);
+}
+
 header nav.nav-bar ul li a:hover {
-    padding-bottom: 8px;
+    padding-bottom: 5px;
     border-bottom: 3px solid rgb(215, 215, 215);
+    transition: border .15s ease-out;
+}
+
+header nav.nav-bar ul li a.selected:hover {
+    border-color: var(--clr-selected);
 }
 
 /* Logo navigatie menu */
@@ -143,33 +174,46 @@ header nav.nav-bar ul li img {
     width: 30px;
 }
 
+header nav.nav-bar ul li a#nav-logo:hover {
+    border: 0px;
+}
+
 /* Sociale menu: */
 footer nav.socials-menu {
     background-color: rgb(15, 15, 15);
-    border-top: 3px solid rgb(168, 22, 22);
+    border-top: 3px solid var(--clr-light-red);
     margin-top: 20px;
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
-footer nav.socials-menu table tr td {
+footer nav.socials-menu div.socials {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: minmax(150px, 3fr);
+}
+
+footer nav.socials-menu div.socials-box {
+    margin: 20px;
+    display: grid;
+    place-items: center;
     font-size: 15px;
     font-family: fantasy, Arial;
-    margin: 0;
     text-align: center;
-    list-style: none;
-    display: inline-block;
-    margin-left: 30px;
 }
 
 /* Kleur veranderings effect van het socials menu */
-footer nav.socials-menu table tr td:hover {
-    color: rgb(168, 22, 22)
+footer nav.socials-menu div.socials-box:hover {
+    color: var(--clr-light-red);
+    transition: color .15s ease-out;
 }
 
 /* Titel van het socials menu */
 footer nav.socials-menu .socials-title {
-    color: rgb(168, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-light-red);
     text-align: center;
     font-family: fantasy, Arial;
     font-size: 30px;
@@ -183,72 +227,90 @@ footer nav.socials-menu img.socials-logo {
     width: 64px;
 }
 
+/* Slideshow */
+.img-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20rem;
+}
 
-/* Aanpassingen voor mobiele apparaten */
-@media (max-width: 700px) {
-    div.wrapper {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        height: 91.5vh;
-        width: 100vw;
-        overflow-y: scroll;
-    }
+.img-slider .slide {
+    z-index: 1;
+    position: absolute;
+    clip-path: circle(0% at 0 50%);
+}
 
-    img.background-img {
-        position: absolute;
-        height: 100vh;
-        width: 100vw;
-        z-index: -999;
-    }
+.img-slider .slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition-property: clip-path;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    /* Onderlijn hover effect van het navigatiemenu */
-    header nav.nav-bar ul li a:hover {
-        padding: 0;
-        border-bottom: 2px solid rgb(215, 215, 215);
-    }
+.img-slider .slide img {
+    z-index: -997;
+    width: min(1000px, 100%);
+    border-radius: 5px;
+}
 
+.img-slider .slide .info {
+    right: 50px;
+    top: -50px;
+    position: absolute;
+}
 
-    header nav.nav-bar ul li a {
-        margin-right: 10px;
-    }
+.img-slider .slide .info h2 {
+    color: var(--clr-white);
+    font-size: 45px;
+    text-transform: uppercase;
+    width: 150%;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
 
-    /* Logo navigatie menu */
-    header nav.nav-bar ul li img {
-        width: 20px;
-    }
+.img-slider .slide .info p {
+    color: var(--clr-white);
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 0
+}
 
-    body {
-        font-size: 12px;
-    }
+.img-slider .slide .info a:hover {
+    color: var(--clr-light-red);
+}
 
-    footer nav.socials-menu {
-        margin-top: 10px;
-        padding-top: 10px;
-        padding-bottom: 40px;
-    }
+.img-slider .navigation {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin-top: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    /* Logo's van het socials menu */
-    footer nav.socials-menu img.socials-logo {
-        height: 32px;
-        width: 32px;
-    }
+.img-slider .navigation .btn {
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-    footer nav.socials-menu table tr td {
-        font-size: 12px;
-        font-family: fantasy, Arial;
-        margin: 0;
-        text-align: center;
-        list-style: none;
-        display: inline-block;
-        margin-left: 10px;
-    }
+.img-slider .navigation .btn:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
 
-    footer nav.socials-menu .socials-title {
-        font-size: 20px;
-    }
-
-    div.wrapper .wrapper-background .background-title {
-        font-size: 50px;
-    }
+.img-slider .navigation .btn.active {
+    background: var(--clr-light-red);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
