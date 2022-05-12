@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Externe CSS: -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Skins</title>
+</head>
+
+<body id="overflow-hidden">
+    <header>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
+                        <img width="64px" style="vertical-align: bottom;" src="images/Rust_Logo.png" alt="Rust Logo">
+                    </a>
+                </li>
+
+                <li>
+                    <a href=index.html target="_self">Home</a>
+                </li>
+                <li>
+                    <a href="over.html" target="_self">Over</a>
+                </li>
+                <li>
+                    <a href="tipsNtricks.html" target="_self">Tips en tricks</a>
+                </li>
+                <li>
+                    <a href="#" target="_self">Wapens</a>
+                </li>
+                <li>
+                    <a href="#" target="_self">Gebouwen</a>
+                </li>
+                <li>
+                    <a class="selected" href="skins.html" target="_self">Skins</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+        <div class="img-slider">
+            <div class="slide active">
+                <img src="images/isvolcano AR.png" alt="isvolcano AR">
+                <div class="info">
+                    <h2>isvolcano AR</h2>
+                    <p>
+                        AK47 skin
+                        <br>-Twitch drop
+                        <br>-Niet ruilbaar
+                        <br>-Niet verkoopbaar
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/Alien Relic SMG.png" alt="Alien Relic SMG">
+                <div class="info">
+                    <h2>Alien Relic SMG</h2>
+                    <p>
+                        Custom SMG skin
+                        <br>-Gloeiend
+                        <br>-Ruilbaar
+                        <br>-Verkoopbaar
+                        <br>
+                        <a href="https://steamcommunity.com/market/listings/252490/Alien%20Relic%20SMG" target="_blank">
+                            Steam Market
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/Tempered MP5.png" alt="Tempered MP5">
+                <div class="info">
+                    <h2>Tempered Mp5</h2>
+                    <p>
+                        MP5 skin
+                        <br>-Ruilbaar
+                        <br>-Verkoopbaar
+                        <br>
+                        <a href="https://steamcommunity.com/market/listings/252490/Tempered%20Mp5" target="_blank">
+                            Steam Market
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/Hot-tempered longsword.png" alt="Longsword">
+                <div class="info">
+                    <h2>Hot-tempered Longsword</h2>
+                    <p>
+                        Longsword skin
+                        <br>-Ruilbaar
+                        <br>-Verkoopbaar
+                        <br>
+                        <a href="https://steamcommunity.com/market/listings/252490/Hot-tempered%20Longsword"
+                            target="_blank">
+                            Steam Market
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/Big grin.png" alt="Big grin">
+                <div class="info">
+                    <h2>Big grin</h2>
+                    <p>Metal facemask
+                        <br>-Ruilbaar
+                        <br>-Verkoopbaar
+                        <br>
+                        <a href="https://steamcommunity.com/market/listings/252490/Big%20Grin">
+                            Steam Market
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="btn active"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var slides = document.querySelectorAll('.slide');
+            var btns = document.querySelectorAll('.btn');
+            let currentSlide = 1;
+
+            // Javascript for image slider manual navigation
+            var manualNav = function (manual) {
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+
+                    btns.forEach((btn) => {
+                        btn.classList.remove('active');
+                    });
+                });
+
+                slides[manual].classList.add('active');
+                btns[manual].classList.add('active');
+            }
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    manualNav(i);
+                    currentSlide = i;
+                });
+            });
+
+            // Javascript for image slider autoplay navigation
+            var repeat = function (activeClass) {
+                let active = document.getElementsByClassName('active');
+                let i = 1;
+
+                var repeater = () => {
+                    setTimeout(function () {
+                        [...active].forEach((activeSlide) => {
+                            activeSlide.classList.remove('active');
+                        });
+                        i = currentSlide;
+                        slides[i].classList.add('active');
+                        btns[i].classList.add('active');
+                        i++;
+
+                        if (slides.length == i) {
+                            i = 0;
+                        }
+
+                        if (i >= slides.length) {
+                            return;
+                        }
+                        repeater();
+                    }, 1000);
+                }
+                repeater();
+            }
+            repeat();
+        </script>
+
+
+    </body>
+
+</html>
+
+</body>
+
+</html>
