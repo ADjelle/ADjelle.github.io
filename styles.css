@@ -29,6 +29,7 @@ body {
     padding: 0;
     border: 0;
     overflow-x: hidden;
+    overflow-y: auto;
     background-color: var(--clr-background);
     color: var(--clr-white);
 }
@@ -43,6 +44,10 @@ p {
 
 a {
     color: yellow;
+}
+
+a:hover {
+    color: var(--clr-light-red);
 }
 
 /* Zorgt ervoor dat er geen x en y-scrollbars aanwezig zijn. */

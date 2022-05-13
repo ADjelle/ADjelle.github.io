@@ -13,7 +13,7 @@
     <title>Skins</title>
 </head>
 
-<body id="overflow-hidden">
+<body>
     <header>
         <nav class="nav-bar">
             <input type="checkbox" id="check">
@@ -114,7 +114,7 @@
                 <img src="images/Big grin.png" alt="Big grin">
                 <div class="info">
                     <h2>Big grin</h2>
-                    <p>Metal facemask
+                    <p>Metal facemask skin
                         <br>-Ruilbaar
                         <br>-Verkoopbaar
                         <br>
@@ -133,10 +133,24 @@
             </div>
         </div>
 
+
+        <p style="margin: 0 auto; margin-top: 450px; width: 50%;">
+            In Rust zijn er skins voor bijna elk voorwerp. Sommige skins kan je kopen, ruilen of verkopen en anderen
+            niet. Sinds de opgang van Twitch drops zijn er meer en meer veranderingen aan skins, er worden steeds meer
+            voorwerpen skinbaar en er zijn steeds meer evenementen waar je exclusieve skins kan verkrijgen. Er worden
+            ook skins gemaakt voor alle speciale periodes van het jaar bijvoorbeeld Halloween, kerstmis, pasen,...
+            <br> Om meer te zien over skins kan je de website
+            <a href="https://rustlabs.com/skins" target="_blank">
+                Rustlabs
+            </a>
+            bezoeken.
+        </p>
+
         <script type="text/javascript">
             var slides = document.querySelectorAll('.slide');
             var btns = document.querySelectorAll('.btn');
             let currentSlide = 1;
+            let i = 1;
 
             // Javascript for image slider manual navigation
             var manualNav = function (manual) {
@@ -162,14 +176,13 @@
             // Javascript for image slider autoplay navigation
             var repeat = function (activeClass) {
                 let active = document.getElementsByClassName('active');
-                let i = 1;
 
                 var repeater = () => {
                     setTimeout(function () {
                         [...active].forEach((activeSlide) => {
                             activeSlide.classList.remove('active');
                         });
-                        currentSlide = i;
+                        i = currentSlide;
                         slides[i].classList.add('active');
                         btns[i].classList.add('active');
                         i++;
@@ -181,6 +194,8 @@
                         if (i >= slides.length) {
                             return;
                         }
+
+                        currentSlide = i;
                         repeater();
                     }, 5000);
                 }
