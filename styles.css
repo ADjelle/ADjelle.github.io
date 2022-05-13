@@ -8,11 +8,6 @@
     --clr-background: rgb(20, 20, 20);
 }
 
-@viewport {
-    zoom: 1;
-    width: extend-to-zoom;
-}
-
 /* Basis HTML tags: */
 
 /* Hierdoor wordt bij elke nieuwe HTML tag deze code geplaatst behalve als je er iets anders inzet. */
