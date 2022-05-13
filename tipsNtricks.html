@@ -35,11 +35,8 @@
         }
 
 
-        #oil-rig {}
-
-        tr {
-            border-bottom: 2px solid white;
-            border-top: 20px solid red;
+        #oil-rig {
+            background-image: url(images/Oil\ rig.png);
         }
     </style>
     <title>Tips en tricks</title>
@@ -49,6 +46,10 @@
     <!-- Navigatie menu: -->
     <header>
         <nav class="nav-bar">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
             <ul>
                 <li>
                     <a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
@@ -63,7 +64,7 @@
                     <a href="over.html" target="_self">Over</a>
                 </li>
                 <li>
-                    <a class="selected" href="tipsNtricks.html" target="_self">Tips en Tricks</a>
+                    <a class="selected" href="tipsNtricks.html" target="_self">Tips&nbsp;en&nbsp;Tricks</a>
                 </li>
                 <li>
                     <a href="#" target="_self">Wapens</a>
@@ -111,7 +112,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id="oil-rig">
                         <abbr title="monument in de zee, op de buitenkant van de map">
                             Oil rig
                         </abbr>

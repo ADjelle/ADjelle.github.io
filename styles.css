@@ -37,7 +37,7 @@ p {
     font-style: fantasy, Arial;
     margin-left: 1rem;
     margin-right: 1rem;
-    font-size: min(16px, 70%);
+    font-size: 16px;
     color: var(--clr-white);
 }
 
@@ -96,6 +96,7 @@ div.wrapper .wrapper-background .background-title {
     font-size: 100px;
     text-shadow: 0 5px 10px black;
     color: white;
+    -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
 }
 
 /* Vullen van de achtergrond */
@@ -125,8 +126,9 @@ div.wrapper .wrapper-background .background-title {
 
 /* Navigatie menu: */
 header nav.nav-bar {
+    position: relative;
     margin: 0;
-    font-size: 24px;
+    font-size: min(large, 24px);
     font-family: fantasy, Arial;
     font-weight: 500;
     background-color: var(--clr-dark-red);
@@ -142,7 +144,7 @@ header nav.nav-bar ul {
 
 header nav.nav-bar ul li {
     padding: 0px;
-    margin-right: 50px;
+    margin-right: min(50px, 2rem);
     list-style: none;
     display: inline-block;
 }
@@ -234,7 +236,8 @@ footer nav.socials-menu img.socials-logo {
     align-items: center;
     position: relative;
     margin: 0 auto;
-    margin-top: 20rem;
+    width: min(1000px, 100%);
+    top: 15rem;
 }
 
 .img-slider .slide {
@@ -313,4 +316,70 @@ footer nav.socials-menu img.socials-logo {
 .img-slider .navigation .btn.active {
     background: var(--clr-light-red);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile nav-bar */
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    margin-right: 13%;
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .checkbtn {
+        display: block;
+    }
+
+    header nav.nav-bar {
+        margin: 0;
+        height: 0;
+        padding: 0;
+        border: 0;
+        z-index: 999;
+    }
+
+    header nav.nav-bar ul {
+        position: fixed;
+        width: 25vw;
+        text-align: left;
+        margin: 0;
+        top: 56px;
+        left: 100%;
+        padding: 0;
+        border: 0;
+        transition: all 0.5s;
+    }
+
+    header nav.nav-bar ul li {
+        text-align: left;
+        margin-top: 10px;
+        line-height: 30px;
+    }
+
+    header nav.nav-bar ul li a:hover {
+        border: 0;
+    }
+
+    header nav.nav-bar ul li:hover {
+        padding-left: 10px;
+    }
+
+    header nav.nav-bar ul li a {
+        padding-right: 50px;
+    }
+
+    #check:checked~ul {
+        left: 75%;
+        transition: all 0.5s;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
