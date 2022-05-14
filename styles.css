@@ -8,27 +8,6 @@
     --clr-background: rgb(20, 20, 20);
 }
 
-@-ms-viewport {
-    max-zoom: 1;
-    min-zoom: 0.75;
-    width: extend-to-zoom;
-    max-width: 100%;
-}
-
-@-o-viewport {
-    max-zoom: 1;
-    min-zoom: 0.75;
-    width: extend-to-zoom;
-    max-width: 100%;
-}
-
-@viewport {
-    max-zoom: 1;
-    min-zoom: 0.75;
-    width: extend-to-zoom;
-    max-width: 100%;
-}
-
 /* Basis HTML tags: */
 
 /* Hierdoor wordt bij elke nieuwe HTML tag deze code geplaatst behalve als je er iets anders inzet. */
@@ -79,7 +58,7 @@ div.wrapper {
     padding: 0;
     border: 0;
     height: 91vh;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -94,7 +73,7 @@ div.wrapper .wrapper-background {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 102%;
+    width: 100%;
     z-index: -999;
     transform-style: preserve-3d;
 }
@@ -127,6 +106,7 @@ div.wrapper .wrapper-background .background-title {
 #background-filler {
     background-color: var(--clr-background);
     height: 100%;
+    width: 100%;
 }
 
 /* Normale titels: */
@@ -158,6 +138,7 @@ header nav.nav-bar {
     background-color: var(--clr-dark-red);
     padding-top: 1.5vh;
     padding-bottom: 1.5vh;
+    width: 100%;
 }
 
 header nav.nav-bar ul {
@@ -223,7 +204,7 @@ footer nav.socials-menu div.socials-box {
     margin: 20px;
     display: grid;
     place-items: center;
-    font-size: 15px;
+    font-size: 16px;
     font-family: fantasy, Arial;
     text-align: center;
 }
