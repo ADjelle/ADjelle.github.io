@@ -96,7 +96,7 @@ div.wrapper .wrapper-background .background-title {
     font-family: fantasy, Arial;
     letter-spacing: 5px;
     text-transform: uppercase;
-    font-size: min(100px, 650%);
+    font-size: 100px;
     text-shadow: 0 5px 10px black;
     color: white;
     -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
@@ -399,6 +399,10 @@ footer nav.socials-menu img.socials-logo {
     }
 
     footer nav.socials-menu {
-        padding-bottom: 40px;
+        padding-bottom: 30px;
+    }
+
+    div.wrapper .wrapper-background .background-title {
+        font-size: 70px;
     }
 }
