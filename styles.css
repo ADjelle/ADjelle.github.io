@@ -8,6 +8,20 @@
     --clr-background: rgb(20, 20, 20);
 }
 
+@-ms-viewport {
+    max-zoom: 1;
+    min-zoom: 0.75;
+    width: extend-to-zoom;
+    max-width: 100%;
+}
+
+@-o-viewport {
+    max-zoom: 1;
+    min-zoom: 0.75;
+    width: extend-to-zoom;
+    max-width: 100%;
+}
+
 @viewport {
     max-zoom: 1;
     min-zoom: 0.75;
@@ -64,15 +78,17 @@ div.wrapper {
     margin: 0;
     padding: 0;
     border: 0;
-    height: 93.5vh;
+    height: 91vh;
     width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
     perspective: 300px;
+    top: 0;
 }
 
 div.wrapper .wrapper-background {
+    top: 0;
     position: relative;
     display: flex;
     justify-content: center;
@@ -85,11 +101,12 @@ div.wrapper .wrapper-background {
 
 
 img.background-img {
+    top: 0;
     position: absolute;
     object-position: center;
     object-fit: cover;
     height: 100%;
-    width: 100%;
+    width: 102%;
     z-index: -998;
     transform: translateZ(-300px) scale(2);
     transform-style: preserve-3d;
@@ -109,7 +126,7 @@ div.wrapper .wrapper-background .background-title {
 /* Vullen van de achtergrond */
 #background-filler {
     background-color: var(--clr-background);
-
+    height: 100%;
 }
 
 /* Normale titels: */
@@ -150,7 +167,7 @@ header nav.nav-bar ul {
 }
 
 header nav.nav-bar ul li {
-    padding: 0px;
+    padding: 0;
     margin-right: min(50px, 2rem);
     list-style: none;
     display: inline-block;
@@ -180,7 +197,7 @@ header nav.nav-bar ul li a.selected:hover {
 
 /* Logo navigatie menu */
 header nav.nav-bar ul li img {
-    width: 30px;
+    max-width: 30px;
 }
 
 header nav.nav-bar ul li a#nav-logo:hover {
@@ -232,8 +249,8 @@ footer nav.socials-menu .socials-title {
 
 /* Logo's van het socials menu */
 footer nav.socials-menu img.socials-logo {
-    height: 64px;
-    width: 64px;
+    max-height: 64px;
+    max-width: 64px;
 }
 
 /* Slideshow */
@@ -277,7 +294,7 @@ footer nav.socials-menu img.socials-logo {
     color: var(--clr-white);
     font-size: 45px;
     text-transform: uppercase;
-    width: 150%;
+    max-width: 150%;
     font-weight: 800;
     letter-spacing: 2px;
 }
@@ -286,7 +303,7 @@ footer nav.socials-menu img.socials-logo {
     color: var(--clr-white);
     background: rgba(0, 0, 0, 0.1);
     font-size: 16px;
-    width: 60%;
+    max-width: 60%;
     padding: 10px;
     border-radius: 4px;
     margin: 0
@@ -334,7 +351,7 @@ footer nav.socials-menu img.socials-logo {
     margin-right: 13%;
     cursor: pointer;
     display: none;
-    padding: 10px;
+    padding: 1.2vh;
 }
 
 #check {
@@ -351,19 +368,18 @@ footer nav.socials-menu img.socials-logo {
         height: 0;
         padding: 0;
         border: 0;
-        z-index: 999;
     }
 
     header nav.nav-bar ul {
         position: fixed;
-        width: 25vw;
         text-align: left;
         margin: 0;
-        top: 56px;
+        top: 49px;
         left: 100%;
         padding: 0;
         border: 0;
         transition: all 0.5s;
+        z-index: 999;
     }
 
     header nav.nav-bar ul li {
