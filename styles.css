@@ -57,7 +57,7 @@ div.wrapper {
     margin: 0;
     padding: 0;
     border: 0;
-    height: 91vh;
+    height: 92vh;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -241,8 +241,8 @@ footer nav.socials-menu img.socials-logo {
     align-items: center;
     position: relative;
     margin: 0 auto;
-    width: min(1000px, 100%);
-    top: 15rem;
+    width: min(1000px, 90%);
+    top: 16rem;
 }
 
 .img-slider .slide {
@@ -261,21 +261,20 @@ footer nav.socials-menu img.socials-logo {
 
 .img-slider .slide img {
     z-index: -997;
-    width: min(1000px, 100%);
+    width: min(1000px, 90%);
     border-radius: 5px;
 }
 
 .img-slider .slide .info {
-    right: 50px;
-    top: -50px;
+    bottom: 200px;
+    text-align: left;
     position: absolute;
 }
 
 .img-slider .slide .info h2 {
     color: var(--clr-white);
-    font-size: 45px;
+    font-size: 36px;
     text-transform: uppercase;
-    max-width: 150%;
     font-weight: 800;
     letter-spacing: 2px;
 }
@@ -284,7 +283,6 @@ footer nav.socials-menu img.socials-logo {
     color: var(--clr-white);
     background: rgba(0, 0, 0, 0.1);
     font-size: 16px;
-    max-width: 60%;
     padding: 10px;
     border-radius: 4px;
     margin: 0
@@ -364,6 +362,7 @@ footer nav.socials-menu img.socials-logo {
     }
 
     header nav.nav-bar ul li {
+        display: inline-block;
         text-align: left;
         margin-top: 10px;
         line-height: 30px;
@@ -374,7 +373,7 @@ footer nav.socials-menu img.socials-logo {
     }
 
     header nav.nav-bar ul li:hover {
-        padding-left: 10px;
+        padding-left: 1rem;
     }
 
     header nav.nav-bar ul li a {
@@ -382,7 +381,7 @@ footer nav.socials-menu img.socials-logo {
     }
 
     #check:checked~ul {
-        left: 75%;
+        left: 70%;
         transition: all 0.5s;
         background-color: rgba(0, 0, 0, 0.5);
     }
