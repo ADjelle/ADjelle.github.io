@@ -356,7 +356,7 @@ footer nav.socials-menu img.socials-logo {
         position: fixed;
         text-align: left;
         margin: 0;
-        top: 46.5px;
+        top: 48.5px;
         left: 100%;
         padding: 10px;
         border: 0;
@@ -399,7 +399,7 @@ footer nav.socials-menu img.socials-logo {
     }
 
     footer nav.socials-menu {
-        padding-bottom: 30px;
+        padding-bottom: 15px;
     }
 
     div.wrapper .wrapper-background .background-title {
