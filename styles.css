@@ -338,6 +338,11 @@ footer nav.socials-menu img.socials-logo {
 }
 
 @media only screen and (max-width: 700px) {
+
+    div.wrapper {
+        height: 90vh;
+    }
+
     .checkbtn {
         display: block;
     }
@@ -353,9 +358,9 @@ footer nav.socials-menu img.socials-logo {
         position: fixed;
         text-align: left;
         margin: 0;
-        top: 49px;
+        top: 46.5px;
         left: 100%;
-        padding: 0;
+        padding: 10px;
         border: 0;
         transition: all 0.5s;
         z-index: 999;
@@ -377,11 +382,11 @@ footer nav.socials-menu img.socials-logo {
     }
 
     header nav.nav-bar ul li a {
-        padding-right: 50px;
+        padding-right: 1000px;
     }
 
     #check:checked~ul {
-        left: 70%;
+        left: 65%;
         transition: all 0.5s;
         background-color: rgba(0, 0, 0, 0.5);
     }
