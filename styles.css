@@ -395,6 +395,7 @@ footer nav.socials-menu img.socials-logo {
     }
 
     #check:checked~ul {
+        top: 50px;
         left: 55%;
     }
 
