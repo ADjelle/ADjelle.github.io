@@ -350,6 +350,7 @@ footer nav.socials-menu img.socials-logo {
         height: 0;
         padding: 0;
         border: 0;
+        background-image: url(images/Rust\ menu\ background\ v1.jpg);
     }
 
     header nav.nav-bar ul {
@@ -395,12 +396,12 @@ footer nav.socials-menu img.socials-logo {
     }
 
     #check:checked~ul {
-        top: 50px;
+        top: 55px;
         left: 55%;
     }
 
     footer nav.socials-menu {
-        padding-bottom: 15px;
+        padding-bottom: 0;
     }
 
     div.wrapper .wrapper-background .background-title {
