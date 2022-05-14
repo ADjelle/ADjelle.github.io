@@ -9,8 +9,10 @@
 }
 
 @viewport {
-    zoom: 0.9;
+    max-zoom: 1;
+    min-zoom: 0.75;
     width: extend-to-zoom;
+    max-width: 100%;
 }
 
 /* Basis HTML tags: */
@@ -339,7 +341,7 @@ footer nav.socials-menu img.socials-logo {
     display: none;
 }
 
-@media (max-width: 700px) {
+@media only screen and (max-width: 700px) {
     .checkbtn {
         display: block;
     }
