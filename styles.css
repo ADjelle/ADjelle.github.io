@@ -345,12 +345,15 @@ footer nav.socials-menu img.socials-logo {
         display: block;
     }
 
+    body {
+        background-image: url(images/Rust\ menu\ background\ v1.jpg);
+    }
+
     header nav.nav-bar {
         margin: 0;
         height: 0;
         padding: 0;
         border: 0;
-        background-image: url(images/Rust\ menu\ background\ v1.jpg);
     }
 
     header nav.nav-bar ul {
@@ -396,7 +399,7 @@ footer nav.socials-menu img.socials-logo {
     }
 
     #check:checked~ul {
-        top: 55px;
+        top: 57px;
         left: 55%;
     }
 
