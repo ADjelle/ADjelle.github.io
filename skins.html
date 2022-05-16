@@ -50,6 +50,7 @@
     </header>
 
     <body>
+        <!-- Slideshow -->
         <div>
             <div class="img-slider">
                 <div class="slide active">
@@ -162,7 +163,7 @@
             let currentSlide = 1;
             let i = 1;
 
-            // Javascript for image slider manual navigation
+            // Javascript voor slideshow manuele navigatie
             var manualNav = function (manual) {
                 slides.forEach((slide) => {
                     slide.classList.remove('active');
@@ -183,7 +184,7 @@
                 });
             });
 
-            // Javascript for image slider autoplay navigation
+            // Javascript voor slideshow automatische navigatie
             var repeat = function (activeClass) {
                 let active = document.getElementsByClassName('active');
 

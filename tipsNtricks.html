@@ -19,12 +19,14 @@
             margin-top: 20px;
         }
 
+        /* Gegevens uit elkaar positioneren */
         table.monuments td {
             padding: 10px;
         }
 
         #cargo,
-        #oil-rig {
+        #oil-rig,
+        #outpost {
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -39,10 +41,15 @@
             background-image: url(images/Oil\ rig.png);
         }
 
+        #outpost {
+            background-image: url();
+        }
+
+        /* Voor mobiele apparaten */
         @media only screen and (max-width: 475px) {
             table.monuments {
-                font-size: smaller;
-                padding-right: 40px;
+                font-size: calc(smaller + 2px);
+                padding-right: 35px;
             }
 
         }
@@ -157,6 +164,41 @@
                                 weg is</li>
                             <li>U kunt nu genezende middelen maken met de cloth die u hiervan gekregen hebt</li>
                         </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="outpost">
+                        Outpost
+                    </td>
+                    <td colspan="2">
+                        <b>
+                            In outpost zijn er meerdere nuttige tips en tricks die u kunt toepassen.
+                        </b>
+
+                        <ul>
+                            <li>
+                                U kunt hier voorwerpen kopen en deze dan recyclen naar nodige materialen zoals
+                                oncraftbare handschoenen kopen en ze dan recyclen voor leer.
+                            </li>
+                            <li>
+                                U kunt hier steen omwisselen in hout en omgekeerd.
+                            </li>
+                            <li>
+                                U kunt hier tal van nuttige voorwerpen bemachtigen.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="vertical-align: top;">
+                        Alle monumenten met een tier 1 workbench
+                    </td>
+
+                    <td colspan="2">
+                        Om direct een tier 2 workbench te verkrijgen kan u met de nodige materialen naar een monument
+                        lopen met een tier 1 workbench lopen en deze daar craften zonder zelf een tier 1 workbench te
+                        hoeven maken.
                     </td>
                 </tr>
             </table>
