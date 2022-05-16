@@ -6,6 +6,7 @@
     --clr-white: rgb(215, 215, 215);
     --clr-selected: rgb(196, 41, 41);
     --clr-background: rgb(20, 20, 20);
+    --clr-background-transparant: rgba(20, 20, 20, 0.5);
 }
 
 /* Basis HTML tags: */
@@ -21,7 +22,6 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
     margin: 0;
     padding: 0;
     border: 0;
@@ -49,6 +49,7 @@ a:hover {
 /* Zorgt ervoor dat er geen x en y-scrollbars aanwezig zijn. */
 #overflow-hidden {
     overflow: hidden;
+    width: 100%;
 }
 
 /* Wrapper: */
@@ -282,7 +283,7 @@ footer nav.socials-menu img.socials-logo {
 
 .img-slider .slide .info p {
     color: var(--clr-white);
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--clr-background-transparant);
     padding: 10px;
     border-radius: 4px;
     margin: 0
@@ -337,9 +338,17 @@ footer nav.socials-menu img.socials-logo {
     display: none;
 }
 
+.fas.fa-bars {
+    font-size: 24px;
+}
+
 /* Media */
 
 @media only screen and (max-width: 700px) {
+
+    * {
+        font-size: 16px;
+    }
 
     .checkbtn {
         display: block;
@@ -353,10 +362,11 @@ footer nav.socials-menu img.socials-logo {
     }
 
     header nav.nav-bar ul {
+        font-size: 24px;
         position: fixed;
         text-align: left;
         margin: 0;
-        top: 48.5px;
+        top: 53px;
         left: 100%;
         padding: 10px;
         border: 0;
@@ -385,7 +395,7 @@ footer nav.socials-menu img.socials-logo {
     #check:checked~ul {
         left: 70%;
         transition: all 0.5s;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: var(--clr-background-transparant);
     }
 }
 
