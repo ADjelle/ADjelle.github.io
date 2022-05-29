@@ -276,12 +276,14 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	top: 14rem;
 }
 
+/* Slide */
 .img-slider .slide {
 	z-index: 1;
 	position: absolute;
 	clip-path: circle(0% at 0 50%);
 }
 
+/* Actieve slide */
 .img-slider .slide.active {
 	clip-path: circle(150% at 0 50%);
 	transition-property: clip-path;
@@ -290,11 +292,13 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	align-items: center;
 }
 
+/* Afbeeldingen van slides */
 .img-slider .slide img {
 	z-index: -997;
 	border-radius: 5px;
 }
 
+/* Info over slides */
 .img-slider .slide .info {
 	position: absolute;
 	bottom: 150px;
@@ -302,6 +306,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	text-align: left;
 }
 
+/* Slides titel */
 .img-slider .slide .info h2 {
 	color: var(--clr-white);
 	font-size: 34px;
@@ -310,6 +315,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	letter-spacing: 2px;
 }
 
+/* Slides paragraaf */
 .img-slider .slide .info p {
 	color: var(--clr-white);
 	background-color: var(--clr-background-transparant);
@@ -318,10 +324,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	margin: 0;
 }
 
-.img-slider .slide .info a:hover {
-	color: var(--clr-light-red);
-}
-
+/* Navigatie van de slideshow */
 .img-slider .navigation {
 	z-index: 2;
 	position: absolute;
@@ -333,6 +336,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	transform: translateX(-50%);
 }
 
+/* Navigatie knoppen */
 .img-slider .navigation .btn {
 	background-color: rgba(255, 255, 255, 0.5);
 	width: 12px;
@@ -342,6 +346,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	cursor: pointer;
 }
 
+/* Knop om een slide naar links te gaan */
 .img-slider .btnLeft {
 	position: absolute;
 	margin-top: 50px;
@@ -354,6 +359,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	display: none;
 }
 
+/* Knop om een slide naar rechts te gaan */
 .img-slider .btnRight {
 	background-color: rgba(255, 255, 255, 0.75);
 	width: 25px;
@@ -401,7 +407,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	font-size: 24px;
 }
 
-/* Media */
+/* Media queries voor beter uitzicht van de website */
 
 @media only screen and (max-width: 700px) {
 	:root {
@@ -480,14 +486,9 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 		font-size: 14px;
 	}
 
-	div.wrapper {
-		height: 85vh;
-		width: max-content;
-	}
-
 	#check:checked ~ ul {
-		top: 53px;
-		left: 55px;
+		top: 52px;
+		left: 67%;
 		transition: left 0.25s ease-in-out;
 	}
 
