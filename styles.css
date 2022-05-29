@@ -1,423 +1,501 @@
 /* Root: */
 /* Met de root kan je variabelen instellen wat betekent dat je minder dingen opnieuw moet coderen. */
 :root {
-    --clr-dark-red: rgb(58, 7, 7);
-    --clr-light-red: rgb(168, 22, 22);
-    --clr-white: rgb(215, 215, 215);
-    --clr-selected: rgb(196, 41, 41);
-    --clr-background: rgb(20, 20, 20);
-    --clr-background-transparant: rgba(20, 20, 20, 0.5);
+	--clr-dark-red: rgb(58, 7, 7);
+	--clr-light-red: rgb(168, 22, 22);
+	--clr-white: rgb(215, 215, 215);
+	--clr-selected: rgb(196, 41, 41);
+	--clr-background: rgb(20, 20, 20);
+	--clr-background-transparant: rgba(20, 20, 20, 0.5);
+	--clr-background-socials: rgb(15, 15, 15);
+	--font-default-size: 18px;
 }
 
 /* Basis HTML tags: */
 
 /* Hierdoor wordt bij elke nieuwe HTML tag deze code geplaatst behalve als je er iets anders inzet. */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 18px;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 18px;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: var(--clr-background);
-    color: var(--clr-white);
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: var(--clr-background);
+	color: var(--clr-white);
 }
 
 p {
-    font-style: fantasy, Arial;
-    padding: 1rem;
-    margin: 0 auto;
-    color: var(--clr-white);
+	font-style: fantasy, Arial;
+	margin: 0 auto;
+	color: var(--clr-white);
 }
 
 a {
-    color: yellow;
+	color: yellow;
 }
 
 a:hover {
-    color: var(--clr-light-red);
+	color: var(--clr-selected);
+}
+
+abbr {
+	color: whitesmoke;
+}
+
+abbr:hover {
+	color: var(--clr-selected);
 }
 
 /* Zorgt ervoor dat er geen x en y-scrollbars aanwezig zijn. */
 #overflow-hidden {
-    overflow: hidden;
-    width: 100%;
-}
-
-/* Wrapper: */
-/* Een wrapper kan je het best interpreteren als een body in een body. */
-/* Deze wrapper wordt gebruikt voor een parallax scroll effect en een afbeelding die de achtergrond bedekt. */
-div.wrapper {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    height: 93vh;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    perspective: 300px;
-    top: 0;
-}
-
-div.wrapper .wrapper-background {
-    top: 0;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    z-index: -999;
-    transform-style: preserve-3d;
-}
-
-
-img.background-img {
-    top: 0;
-    position: absolute;
-    object-position: center;
-    object-fit: cover;
-    height: 100%;
-    width: 102%;
-    z-index: -998;
-    transform: translateZ(-300px) scale(2);
-    transform-style: preserve-3d;
-}
-
-div.wrapper .wrapper-background .background-title {
-    text-align: center;
-    font-family: fantasy, Arial;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-size: 100px;
-    text-shadow: 0 5px 10px black;
-    color: white;
-}
-
-/* Vullen van de achtergrond */
-#background-filler {
-    background-color: var(--clr-background);
-}
-
-/* Normale titels: */
-.title {
-    font-family: fantasy, Arial;
-    margin-left: 1rem;
-    font-size: 40px;
-    font-weight: lighter;
-    color: var(--clr-light-red);
-    padding-top: 10px;
-}
-
-.subtitle {
-    font-family: fantasy, Arial;
-    margin-left: 1rem;
-    font-size: 25px;
-    font-weight: lighter;
-    color: var(--clr-light-red);
-    padding-top: 10px;
+	overflow: hidden;
 }
 
 /* Navigatie menu: */
 header nav.nav-bar {
-    position: relative;
-    margin: 0;
-    font-size: min(large, 24px);
-    font-family: fantasy, Arial;
-    font-weight: 500;
-    background-color: var(--clr-dark-red);
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
-    width: 100%;
+	position: relative;
+	margin: 0;
+	font-size: min(large, 24px);
+	font-family: fantasy, Arial;
+	font-weight: 500;
+	background-color: var(--clr-dark-red);
+	padding-top: 1.5vh;
+	padding-bottom: 1.5vh;
+	width: 100%;
 }
 
 header nav.nav-bar ul {
-    position: relative;
-    text-align: center;
-    margin: 0;
+	position: relative;
+	text-align: center;
+	margin: 0;
 }
 
 header nav.nav-bar ul li {
-    padding: 0;
-    margin-right: min(50px, 2rem);
-    list-style: none;
-    display: inline-block;
+	padding: 0;
+	padding-right: min(25px, 1rem);
+	padding-left: min(25px, 1rem);
+	list-style: none;
+	display: inline-block;
 }
 
 header nav.nav-bar ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: var(--clr-white);
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--clr-white);
+	transition: all 0.15s ease-out;
 }
 
 /* Onderlijn hover effect van het navigatiemenu */
+header nav.nav-bar ul li:hover a {
+	font-size: calc(var(--font-default-size) + 1px);
+	padding-bottom: 5px;
+	border-bottom: 3px solid var(--clr-white);
+}
 
 header nav.nav-bar ul li a.selected {
-    color: var(--clr-selected);
+	color: var(--clr-selected);
+	transition: border 0.15s ease;
 }
 
-header nav.nav-bar ul li a:hover {
-    padding-bottom: 5px;
-    border-bottom: 3px solid rgb(215, 215, 215);
-    transition: border .15s ease-out;
-}
-
-header nav.nav-bar ul li a.selected:hover {
-    border-color: var(--clr-selected);
+header nav.nav-bar ul li:hover a.selected {
+	border-color: var(--clr-selected);
 }
 
 /* Logo navigatie menu */
 header nav.nav-bar ul li img {
-    max-width: 30px;
+	max-width: 30px;
 }
 
-header nav.nav-bar ul li a#nav-logo:hover {
-    border: 0px;
+header nav.nav-bar ul li:hover a#nav-logo {
+	border: 0;
+}
+
+/* Wrapper: */
+/* Een wrapper kan je het best interpreteren als een container. */
+/* Deze wrapper wordt gebruikt voor een parallax scroll effect en een afbeelding die de achtergrond bedekt. */
+div.wrapper {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	height: 93vh;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	scroll-behavior: smooth;
+	perspective: 300px;
+	top: 0;
+	background-color: var(--clr-background);
+}
+
+/* Wrapper achtergrond */
+div.wrapper .wrapper-background {
+	top: 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	z-index: -999;
+	transform-style: preserve-3d;
+}
+
+/* Achtergrond afbeelding */
+img.background-img {
+	top: 0;
+	position: absolute;
+	object-position: center;
+	object-fit: cover;
+	min-height: max-content;
+	height: 100%;
+	width: 102%;
+	z-index: -998;
+	transform: translateZ(-300px) scale(2);
+	transform-style: preserve-3d;
+}
+
+/* Achtergrond titel */
+div.wrapper .wrapper-background .background-title {
+	text-align: center;
+	font-family: fantasy, Arial;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-size: 100px;
+	text-shadow: 0 5px 10px black;
+	color: white;
+}
+
+/* Vullen van de achtergrond */
+#background-filler {
+	background-color: var(--clr-background);
+}
+
+/* Container */
+#container {
+	margin: 0 auto;
+	width: 90%;
+	padding-bottom: 10px;
+}
+/* Normale titels: */
+
+/* Titel */
+.title {
+	font-family: fantasy, Arial;
+	font-size: 40px;
+	font-weight: lighter;
+	color: var(--clr-light-red);
+	padding-top: 10px;
+}
+
+/* Subtitel */
+.subtitle {
+	font-family: fantasy, Arial;
+	font-size: 25px;
+	font-weight: lighter;
+	color: var(--clr-light-red);
+	padding-top: 10px;
 }
 
 /* Sociale menu: */
 footer nav.socials-menu {
-    background-color: rgb(15, 15, 15);
-    border-top: 3px solid var(--clr-light-red);
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    bottom: 0;
-    position: relative;
-}
-
-footer nav.socials-menu div.socials {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-rows: minmax(150px, 3fr);
-}
-
-footer nav.socials-menu div.socials-box {
-    margin: 20px;
-    display: grid;
-    place-items: center;
-    font-size: 16px;
-    font-family: fantasy, Arial;
-    text-align: center;
-}
-
-/* Kleur veranderings effect van het socials menu */
-footer nav.socials-menu div.socials-box:hover {
-    color: var(--clr-light-red);
-    transition: color .15s ease-out;
+	background-color: var(--clr-background-socials);
+	border-top: 3px solid var(--clr-light-red);
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	position: relative;
 }
 
 /* Titel van het socials menu */
 footer nav.socials-menu .socials-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--clr-light-red);
-    text-align: center;
-    font-family: fantasy, Arial;
-    font-size: 30px;
-    font-weight: lighter;
-    padding-bottom: 20px;
+	margin: 0 auto;
+	color: var(--clr-light-red);
+	text-align: center;
+	font-family: fantasy, Arial;
+	font-size: 30px;
+	font-weight: lighter;
 }
 
-/* Logo's van het socials menu */
-footer nav.socials-menu img.socials-logo {
-    max-height: 64px;
-    max-width: 64px;
+/* Socials */
+footer nav.socials-menu div.socials {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	grid-auto-rows: minmax(150px, 3fr);
 }
 
-/* Slideshow */
+/* Logo's van de socials box */
+footer nav.socials-menu div.socials-box img.socials-logo {
+	max-height: 64px;
+	max-width: 64px;
+	transition: all 0.15s ease-out;
+}
+
+/* Socials box */
+footer nav.socials-menu div.socials-box {
+	display: grid;
+	padding: 20px;
+	place-items: center;
+	font-size: 16px;
+	font-family: fantasy, Arial;
+	text-align: center;
+	transition: all 0.15s ease-out;
+}
+
+/* Hover effect socials box */
+
+footer nav.socials-menu div.socials-box:hover {
+	font-size: 18px;
+	color: var(--clr-light-red);
+}
+
+footer nav.socials-menu div.socials-box:nth-child(6):hover {
+	font-size: initial;
+}
+
+footer nav.socials-menu div.socials-box:hover img.socials-logo {
+	transform: scale(1.1) translateY(2px);
+}
+
+/* Slideshow skins*/
 .img-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: 0 auto;
-    width: min(1000px, 90%);
-    top: 16rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin: 0 auto;
+	width: min(1000px, 90%);
+	top: 14rem;
 }
 
 .img-slider .slide {
-    z-index: 1;
-    position: absolute;
-    clip-path: circle(0% at 0 50%);
+	z-index: 1;
+	position: absolute;
+	clip-path: circle(0% at 0 50%);
 }
 
 .img-slider .slide.active {
-    clip-path: circle(150% at 0 50%);
-    transition-property: clip-path;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	clip-path: circle(150% at 0 50%);
+	transition-property: clip-path;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .img-slider .slide img {
-    z-index: -997;
-    width: min(1000px, 90%);
-    border-radius: 5px;
+	z-index: -997;
+	border-radius: 5px;
 }
 
 .img-slider .slide .info {
-    bottom: 150px;
-    right: 75px;
-    text-align: left;
-    position: absolute;
+	position: absolute;
+	bottom: 150px;
+	right: 75px;
+	text-align: left;
 }
 
 .img-slider .slide .info h2 {
-    color: var(--clr-white);
-    font-size: 34px;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 2px;
+	color: var(--clr-white);
+	font-size: 34px;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 2px;
 }
 
 .img-slider .slide .info p {
-    color: var(--clr-white);
-    background-color: var(--clr-background-transparant);
-    padding: 10px;
-    border-radius: 4px;
-    margin: 0
+	color: var(--clr-white);
+	background-color: var(--clr-background-transparant);
+	padding: 10px;
+	border-radius: 4px;
+	margin: 0;
 }
 
 .img-slider .slide .info a:hover {
-    color: var(--clr-light-red);
+	color: var(--clr-light-red);
 }
 
 .img-slider .navigation {
-    z-index: 2;
-    position: absolute;
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    margin-top: 20rem;
-    left: 50%;
-    transform: translateX(-50%);
+	z-index: 2;
+	position: absolute;
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	margin-top: 20rem;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .img-slider .navigation .btn {
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 12px;
-    height: 12px;
-    margin: 10px;
-    border-radius: 50%;
-    cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 12px;
+	height: 12px;
+	margin: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.img-slider .btnLeft {
+	position: absolute;
+	margin-top: 50px;
+	margin-right: 300px;
+	background-color: rgba(255, 255, 255, 0.75);
+	width: 25px;
+	height: 50px;
+	cursor: pointer;
+	z-index: 2;
+	display: none;
+}
+
+.img-slider .btnRight {
+	background-color: rgba(255, 255, 255, 0.75);
+	width: 25px;
+	height: 50px;
+	top: 50px;
+	right: 50px;
+	cursor: pointer;
+	display: none;
 }
 
 .img-slider .navigation .btn:hover {
-    background-color: rgba(255, 255, 255, 0.75);
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.img-slider .navigation .btnLeft:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.img-slider .navigation .btnRight:hover {
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .img-slider .navigation .btn.active {
-    background-color: var(--clr-light-red);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+	background-color: var(--clr-light-red);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Mobile nav-bar */
 
 .checkbtn {
-    font-size: 30px;
-    color: white;
-    float: right;
-    margin-right: 13%;
-    cursor: pointer;
-    display: none;
-    padding: 1.2vh;
+	display: none;
+	font-size: 30px;
+	color: white;
+	float: right;
+	margin-right: 13%;
+	cursor: pointer;
+	padding: 1.2vh;
 }
 
 #check {
-    display: none;
+	display: none;
 }
 
 .fas.fa-bars {
-    font-size: 24px;
+	font-size: 24px;
 }
 
 /* Media */
 
 @media only screen and (max-width: 700px) {
+	:root {
+		--font-default-size: 16px;
+	}
 
-    * {
-        font-size: 16px;
-    }
+	* {
+		font-size: 16px;
+	}
 
-    .checkbtn {
-        display: block;
-    }
+	.checkbtn {
+		display: block;
+	}
 
-    header nav.nav-bar {
-        margin: 0;
-        height: 0;
-        padding: 0;
-        border: 0;
-    }
+	header nav.nav-bar {
+		margin: 0;
+		height: 0;
+		padding: 0;
+		border: 0;
+	}
 
-    header nav.nav-bar ul {
-        font-size: 24px;
-        position: fixed;
-        text-align: left;
-        margin: 0;
-        top: 53px;
-        left: 100%;
-        padding: 10px;
-        border: 0;
-        transition: all 0.5s;
-        z-index: 999;
-    }
+	header nav.nav-bar ul {
+		font-size: 24px;
+		position: fixed;
+		text-align: left;
+		margin: 0;
+		top: 46px;
+		left: 100%;
+		padding: 10px;
+		border: 0;
+		transition: all 0.5s;
+		z-index: 999;
+	}
 
-    header nav.nav-bar ul li {
-        text-align: left;
-        margin-top: 10px;
-        line-height: 20px;
-    }
+	header nav.nav-bar ul li {
+		text-align: left;
+		margin-top: 10px;
+		padding: 0;
+		line-height: 20px;
+	}
 
-    header nav.nav-bar ul li a:hover {
-        border: 0;
-    }
+	header nav.nav-bar ul li:hover a {
+		border: 0;
+		font-size: var(--font-default-size);
+	}
 
-    header nav.nav-bar ul li:hover {
-        padding-left: 1rem;
-    }
+	header nav.nav-bar ul li {
+		transition: padding 0.15s ease-in-out;
+	}
 
-    header nav.nav-bar ul li a {
-        padding-right: 1000px;
-    }
+	header nav.nav-bar ul li:hover {
+		padding-left: 1rem;
+	}
 
-    #check:checked~ul {
-        left: 70%;
-        transition: all 0.5s;
-        background-color: var(--clr-background-transparant);
-    }
+	header nav.nav-bar ul li a {
+		padding-right: 1000px;
+	}
+
+	#check:checked ~ ul {
+		left: 70%;
+		transition: left 0.25s ease-in-out;
+		background-color: var(--clr-background-transparant);
+	}
+
+	.img-slider .slide .info h2 {
+		font-size: 28px;
+	}
 }
 
 @media only screen and (max-width: 475px) {
-    * {
-        font-size: 14px;
-    }
+	:root {
+		--font-default-size: 14px;
+	}
 
-    div.wrapper {
-        height: 85vh;
-    }
+	* {
+		font-size: 14px;
+	}
 
-    #check:checked~ul {
-        top: 53px;
-        left: 55%;
-    }
+	div.wrapper {
+		height: 85vh;
+		width: max-content;
+	}
 
-    footer nav.socials-menu {
-        padding-bottom: 0;
-    }
+	#check:checked ~ ul {
+		top: 53px;
+		left: 55px;
+		transition: left 0.25s ease-in-out;
+	}
 
-    div.wrapper .wrapper-background .background-title {
-        font-size: 70px;
-    }
+	footer nav.socials-menu {
+		padding-bottom: 0;
+	}
+
+	div.wrapper .wrapper-background .background-title {
+		font-size: 70px;
+	}
 }

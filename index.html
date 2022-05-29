@@ -1,85 +1,87 @@
 <!DOCTYPE html>
 <html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Externe CSS: -->
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
 
-    <!-- Externe CSS: -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<!-- Interne CSS: -->
+		<style>
+			video {
+				margin: 0 auto;
+				position: fixed;
+				max-height: 60%;
+				max-width: 75%;
+			}
 
-    <!-- Interne CSS: -->
-    <style>
-        #video {
-            margin: 0 auto;
-            position: fixed;
-            max-height: 50%;
-            max-width: 90%;
-        }
+			@media only screen and (max-width: 700px) {
+				img.background-img {
+					object-position: right;
+				}
+			}
+		</style>
 
-        @media only screen and (max-width: 700px) {
-            img.background-img {
-                display: none;
-            }
+		<title>Home</title>
+	</head>
 
-            header.wrapper-background {
-                background-image: url(images/Rust\ menu\ background\ v1.jpg)
-            }
-        }
-    </style>
+	<body id="overflow-hidden">
+		<!-- Navigatie menu: -->
+		<header>
+			<nav class="nav-bar">
+				<input type="checkbox" id="check" />
+				<label for="check" class="checkbtn">
+					<i class="fas fa-bars"></i>
+				</label>
+				<ul>
+					<li>
+						<a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
+							<img
+								width="64px"
+								style="vertical-align: bottom"
+								src="images/Rust_Logo.png"
+								alt="Rust Logo"
+							/>
+						</a>
+					</li>
 
-    <title>Home</title>
-</head>
+					<li>
+						<a class="selected" href="index.html" target="_self">Home</a>
+					</li>
+					<li>
+						<a href="over.html" target="_self">Over</a>
+					</li>
+					<li>
+						<a href="tipsNtricks.html" target="_self"
+							>Tips&nbsp;en&nbsp;Tricks</a
+						>
+					</li>
+					<li>
+						<a href="skins.html" target="_self">Skins</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-<body id="overflow-hidden">
-    <!-- Navigatie menu: -->
-    <header>
-        <nav class="nav-bar">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul>
-                <li>
-                    <a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
-                        <img width="64px" style="vertical-align: bottom;" src="images/Rust_Logo.png" alt="Rust Logo">
-                    </a>
-                </li>
+		<div class="wrapper" id="overflow-hidden">
+			<header class="wrapper-background">
+				<img
+					class="background-img"
+					src="images/Rust background v1.jpg"
+					alt="Background"
+				/>
 
-                <li>
-                    <a class="selected" href=index.html target="_self">Home</a>
-                </li>
-                <li>
-                    <a href="over.html" target="_self">Over</a>
-                </li>
-                <li>
-                    <a href="tipsNtricks.html" target="_self">Tips&nbsp;en&nbsp;Tricks</a>
-                </li>
-                <li>
-                    <a href="#" target="_self">Wapens</a>
-                </li>
-                <li>
-                    <a href="#" target="_self">Gebouwen</a>
-                </li>
-                <li>
-                    <a href="skins.html" target="_self">Skins</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="wrapper" id="overflow-hidden">
-        <header class="wrapper-background">
-            <img class="background-img" src="images/Rust background v1.jpg" alt="Background">
-
-            <!-- Rust officiële trailer: -->
-            <video id="video" controls poster="images/Rust background v5.jpg">
-                <source src="videos/Rust - Official Trailer.mp4" type="video/mp4">
-            </video>
-        </header>
-    </div>
-</body>
-
+				<!-- Rust officiële trailer: -->
+				<video controls poster="images/Rust background v5.jpg">
+					<source src="videos/Rust - Official Trailer.mp4" type="video/mp4" />
+				</video>
+			</header>
+		</div>
+	</body>
 </html>

@@ -1,268 +1,308 @@
 <!DOCTYPE html>
 <html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Externe CSS: -->
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
 
-    <!-- Externe CSS: -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<style>
+			table.monuments {
+				margin: 0 auto;
+				background-color: var(--clr-background);
+				color: white;
+				margin-top: 20px;
+			}
 
-    <style>
-        table.monuments {
-            margin: 0 auto;
-            background-color: var(--clr-background);
-            color: white;
-            max-width: 90%;
-            margin-top: 20px;
-        }
+			table.monuments ul,
+			table.monuments ol {
+				margin-left: 20px;
+			}
 
-        table.monuments ul,
-        table.monuments ol {
-            margin-left: 20px;
-        }
+			/* Gegevens uit elkaar positioneren */
+			table.monuments td {
+				padding: 10px;
+			}
 
-        /* Gegevens uit elkaar positioneren */
-        table.monuments td {
-            padding: 10px;
-        }
+			#cargo,
+			#oil-rig,
+			#outpost,
+			#tier1 {
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
 
-        #cargo,
-        #oil-rig,
-        #outpost {
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
+			#cargo {
+				background-image: url(images/Cargo\ Ship.jpg);
+			}
 
-        #cargo {
-            background-image: url(images/Cargo\ Ship.jpg);
-        }
+			#oil-rig {
+				background-image: url(images/Oil\ rig.png);
+			}
 
+			#outpost {
+				background-image: url(images/Outpost.png);
+			}
 
-        #oil-rig {
-            background-image: url(images/Oil\ rig.png);
-        }
+			#tier1 {
+				background-image: url(images/Tier\ 1\ workbench.jpg);
+				background-size: cover;
+			}
+			/* Voor mobiele apparaten */
+			@media only screen and (max-width: 475px) {
+				table.monuments {
+					font-size: smaller;
+					margin-left: 0;
+					padding-right: 35px;
+				}
+			}
+		</style>
+		<title>Tips en tricks</title>
+	</head>
 
-        #outpost {
-            background-image: url();
-        }
+	<body id="overflow-hidden">
+		<!-- Navigatie menu: -->
+		<header>
+			<nav class="nav-bar">
+				<input type="checkbox" id="check" />
+				<label for="check" class="checkbtn">
+					<i class="fas fa-bars"></i>
+				</label>
+				<ul>
+					<li>
+						<a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
+							<img
+								width="64px"
+								style="vertical-align: bottom"
+								src="images/Rust_Logo.png"
+								alt="Rust Logo"
+							/>
+						</a>
+					</li>
 
-        /* Voor mobiele apparaten */
-        @media only screen and (max-width: 475px) {
-            table.monuments {
-                font-size: smaller;
-                padding-right: 35px;
-            }
+					<li>
+						<a href="index.html" target="_self">Home</a>
+					</li>
+					<li>
+						<a href="over.html" target="_self">Over</a>
+					</li>
+					<li>
+						<a class="selected" href="tipsNtricks.html" target="_self">
+							Tips&nbsp;en&nbsp;Tricks
+						</a>
+					</li>
+					<li>
+						<a href="skins.html" target="_self">Skins</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-        }
-    </style>
-    <title>Tips en tricks</title>
-</head>
+		<div class="wrapper">
+			<!-- Parallax effect: -->
+			<header class="wrapper-background">
+				<img
+					class="background-img"
+					src="images/Rust background v3.jpg"
+					alt="Background"
+				/>
+				<h1 class="background-title">Tips en tricks</h1>
+			</header>
 
-<body id="overflow-hidden">
-    <!-- Navigatie menu: -->
-    <header>
-        <nav class="nav-bar">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul>
-                <li>
-                    <a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
-                        <img width="64px" style="vertical-align: bottom;" src="images/Rust_Logo.png" alt="Rust Logo">
-                    </a>
-                </li>
+			<div id="background-filler">
+				<div id="container">
+					<h1 class="title">Info</h1>
+					<p>
+						Op deze webpagina kunt u enkele goeie <i>tips en trukjes</i> leren
+						die met de game te maken hebben.
+					</p>
+					<!-- Tabel met tips en tricks: -->
+					<table class="monuments">
+						<tr style="text-align: center">
+							<td>
+								<b> Monumenten </b>
+							</td>
+							<td>
+								<b> Uitleg </b>
+							</td>
+							<td>
+								<b> Stappenplan </b>
+							</td>
+						</tr>
+						<tr>
+							<td id="oil-rig">
+								<abbr title="monument in de zee, op de buitenkant van de map">
+									Oil rig
+								</abbr>
+							</td>
+							<td>
+								Bij oilrig is het gemakkelijker om de
+								<abbr title="NPC's die vijandig zijn">scientists</abbr> te doden
+								terwijl je ze op een afstand schiet op een boot.
+							</td>
+							<td>
+								<ol>
+									<li>
+										Leg uw boot stil op een redelijk verre afstand van oil rig
+									</li>
+									<li>Pak het beste afstandsgericht wapen dat u heeft</li>
+									<li>Schiet zoveel mogelijk scientists dood als u kan</li>
+									<li>
+										Vaar met uw boot naar oil rig en dood de rest van de
+										scientists
+									</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td id="cargo">
+								Oil&nbsp;rig&nbsp;en&nbsp;
+								<abbr title="Boot die ongeveer elk uur rond het eiland vaart">
+									cargo
+								</abbr>
+							</td>
+							<td>
+								Soms kan het zijn dat je te weinig
+								<abbr title="meds of bandages">genezende middelen</abbr> hebt
+								meegebracht, als dit het geval is kunt u het best cloth
+								verzamelen door de dode lichamen van scientists te hakken.
+							</td>
+							<td>
+								<ol>
+									<li>Dood een scientists</li>
+									<li>Pak een gereedschap waarmee u kunt hakken</li>
+									Het beste gereedschap hiervoor is een bone knife.
+									<li>
+										Hak het dode lichaam van de scientist kapot tot het volledig
+										weg is
+									</li>
+									<li>
+										U kunt nu genezende middelen maken met de cloth die u
+										hiervan gekregen hebt
+									</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<td id="outpost">Outpost</td>
+							<td colspan="2">
+								<b>
+									In outpost zijn er meerdere nuttige tips en tricks die u kunt
+									toepassen.
+								</b>
 
-                <li>
-                    <a href=index.html target="_self">Home</a>
-                </li>
-                <li>
-                    <a href="over.html" target="_self">Over</a>
-                </li>
-                <li>
-                    <a class="selected" href="tipsNtricks.html" target="_self">Tips&nbsp;en&nbsp;Tricks</a>
-                </li>
-                <li>
-                    <a href="#" target="_self">Wapens</a>
-                </li>
-                <li>
-                    <a href="#" target="_self">Gebouwen</a>
-                </li>
-                <li>
-                    <a href="skins.html" target="_self">Skins</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+								<ul>
+									<li>
+										U kunt hier voorwerpen kopen en deze dan recyclen naar
+										nodige materialen zoals oncraftbare handschoenen kopen en ze
+										dan recyclen voor leer.
+									</li>
+									<li>U kunt hier steen omwisselen in hout en omgekeerd.</li>
+									<li>U kunt hier tal van nuttige voorwerpen bemachtigen.</li>
+								</ul>
+							</td>
+						</tr>
 
-    <div class="wrapper">
-        <!-- Parallax effect: -->
-        <header class="wrapper-background">
-            <img class="background-img" src="images/Rust background v3.jpg" alt="Background">
-            <h1 class="background-title">Tips en tricks</h1>
-        </header>
+						<tr>
+							<td id="tier1" style="vertical-align: top">
+								Alle monumenten met een tier 1 workbench
+							</td>
 
-        <div id="background-filler">
-            <h1 class="title">Info</h1>
-            <p>
-                Op deze webpagina kunt u enkele goeie <i>tips en trukjes</i> leren die met de game te maken hebben.
-            </p>
+							<td colspan="2">
+								Om direct een tier 2 workbench te verkrijgen kan u met de nodige
+								materialen naar een monument lopen met een tier 1 workbench
+								lopen en deze daar craften zonder zelf een tier 1 workbench te
+								hoeven maken.
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- Socials menu: -->
+				<footer>
+					<nav class="socials-menu">
+						<h1 class="socials-title">Socials</h1>
+						<div class="socials">
+							<div class="socials-box">
+								Rust
+								<br />
+								<a href="https://rust.facepunch.com/" target="_blank">
+									<img
+										class="socials-logo"
+										src="images/Rust_Logo.png"
+										alt="Rust logo"
+									/>
+								</a>
+							</div>
+							<div class="socials-box">
+								Rust op Steam
+								<br />
+								<a
+									href="https://store.steampowered.com/app/252490/Rust/"
+									target="_blank"
+								>
+									<img
+										class="socials-logo"
+										src="images/Steam_Logo.png"
+										alt="Steam logo"
+									/>
+								</a>
+							</div>
+							<div class="socials-box">
+								Rust op Reddit
+								<br />
+								<a href="https://www.reddit.com/r/playrust/" target="_blank">
+									<img
+										class="socials-logo"
+										src="images/Reddit_Logo.png"
+										alt="Reddit logo"
+									/>
+								</a>
+							</div>
+							<div class="socials-box">
+								Rust op Twitter
+								<br />
+								<a href="https://twitter.com/playrust" target="_blank">
+									<img
+										class="socials-logo"
+										src="images/Twitter_Logo.png"
+										alt="Twitter logo"
+									/>
+								</a>
+							</div>
+							<div class="socials-box">
+								Facepunch
+								<br />
+								<a href="https://facepunch.com/" target="_blank">
+									<img
+										class="socials-logo"
+										src="images/Facepunch_Logo.png"
+										alt="Facepunch logo"
+									/>
+								</a>
+							</div>
 
-            <!-- Tabel met tips en tricks: -->
-            <table class="monuments">
-                <tr style="text-align: center;">
-                    <td>
-                        <b>
-                            Monumenten
-                        </b>
-                    </td>
-                    <td>
-                        <b>
-                            Uitleg
-                        </b>
-                    </td>
-                    <td>
-                        <b>
-                            Stappenplan
-                        </b>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="oil-rig">
-                        <abbr title="monument in de zee, op de buitenkant van de map">
-                            Oil rig
-                        </abbr>
-                    </td>
-                    <td>
-                        Bij oilrig is het gemakkelijker om de <abbr title="NPC's die vijandig zijn">scientists</abbr> te
-                        doden terwijl je ze op een afstand schiet op een boot.
-                    </td>
-                    <td>
-                        <ol>
-                            <li>Leg uw boot stil op een redelijk verre afstand van oil rig</li>
-                            <li>Pak het beste afstandsgericht wapen dat u heeft</li>
-                            <li>Schiet zoveel mogelijk scientists dood als u kan</li>
-                            <li>Vaar met uw boot naar oil rig en dood de rest van de scientists</li>
-                        </ol>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="cargo">
-                        Oil&nbsp;rig&nbsp;en&nbsp;
-                        <abbr title="Boot die ongeveer elk uur rond het eiland vaart">cargo</abbr>
-                    </td>
-                    <td>
-                        Soms kan het zijn dat je te weinig <abbr title="meds of bandages">genezende middelen</abbr> hebt
-                        meegebracht, als dit het geval is kunt u het best cloth verzamelen door de dode lichamen van
-                        scientists te hakken.
-                    </td>
-                    <td>
-                        <ol>
-                            <li>Dood een scientists</li>
-                            <li>Pak een gereedschap waarmee u kunt hakken</li>
-                            Het beste gereedschap hiervoor is een bone knife.
-                            <li>Hak het dode lichaam van de scientist kapot tot het volledig
-                                weg is</li>
-                            <li>U kunt nu genezende middelen maken met de cloth die u hiervan gekregen hebt</li>
-                        </ol>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="outpost">
-                        Outpost
-                    </td>
-                    <td colspan="2">
-                        <b>
-                            In outpost zijn er meerdere nuttige tips en tricks die u kunt toepassen.
-                        </b>
-
-                        <ul>
-                            <li>
-                                U kunt hier voorwerpen kopen en deze dan recyclen naar nodige materialen zoals
-                                oncraftbare handschoenen kopen en ze dan recyclen voor leer.
-                            </li>
-                            <li>
-                                U kunt hier steen omwisselen in hout en omgekeerd.
-                            </li>
-                            <li>
-                                U kunt hier tal van nuttige voorwerpen bemachtigen.
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="vertical-align: top;">
-                        Alle monumenten met een tier 1 workbench
-                    </td>
-
-                    <td colspan="2">
-                        Om direct een tier 2 workbench te verkrijgen kan u met de nodige materialen naar een monument
-                        lopen met een tier 1 workbench lopen en deze daar craften zonder zelf een tier 1 workbench te
-                        hoeven maken.
-                    </td>
-                </tr>
-            </table>
-
-            <!-- Socials menu: -->
-            <footer>
-                <nav class="socials-menu">
-                    <h1 class="socials-title">Socials</h1>
-                    <div class="socials">
-
-                        <div class="socials-box">
-                            Rust
-                            <br>
-                            <a href="https://rust.facepunch.com/" target="_blank">
-                                <img class="socials-logo" src="images/Rust_Logo.png" alt="Rust logo">
-                            </a>
-                        </div>
-                        <div class="socials-box">
-                            Rust op Steam
-                            <br>
-                            <a href="https://store.steampowered.com/app/252490/Rust/" target="_blank">
-                                <img class="socials-logo" src="images/Steam_Logo.png" alt="Steam logo">
-                            </a>
-                        </div>
-                        <div class="socials-box">
-                            Rust op Reddit
-                            <br>
-                            <a href="https://www.reddit.com/r/playrust/" target="_blank">
-                                <img class="socials-logo" src="images/Reddit_Logo.png" alt="Reddit logo">
-                            </a>
-                        </div>
-                        <div class="socials-box">
-                            Rust op Twitter
-                            <br>
-                            <a href="https://twitter.com/playrust" target="_blank">
-                                <img class="socials-logo" src="images/Twitter_Logo.png" alt="Twitter logo">
-                            </a>
-                        </div>
-                        <div class="socials-box">
-                            Facepunch
-                            <br>
-                            <a href="https://facepunch.com/" target="_blank">
-                                <img class="socials-logo" src="images/Facepunch_Logo.png" alt="Facepunch logo">
-                            </a>
-                        </div>
-
-                        <div class="socials-box">
-                            Facepunch op YouTube
-                            <br>
-                            <a href="https://www.youtube.com/c/fcpnch" target="_blank">
-                                <img class="socials-logo" src="images/YouTube_Logo.png" alt="YouTube logo">
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </footer>
-        </div>
-    </div>
-
-</body>
-
+							<div class="socials-box">
+								Facepunch op YouTube
+								<br />
+								<a href="https://www.youtube.com/c/fcpnch" target="_blank">
+									<img
+										class="socials-logo"
+										src="images/YouTube_Logo.png"
+										alt="YouTube logo"
+									/>
+								</a>
+							</div>
+						</div>
+					</nav>
+				</footer>
+			</div>
+		</div>
+	</body>
 </html>
