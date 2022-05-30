@@ -136,15 +136,13 @@
                                 <div class="btn"></div>
                                 <div class="btn"></div>
                             </div>
-                            <div class="btnLeft">
-                                <img src="images/arrow-left-solid.svg" alt="Button Left">
-                            </div>
-                            <img class="btnRight" src="images/arrow-right-solid.svg" alt="Button Right">
-                            </div>
+                          
+                                <img class = "btnLeft" src="images/arrow-left-solid.svg" alt="Button Left">
+                                <img class= "btnRight" src="images/arrow-right-solid.svg" alt="Button Right">
                         </div>
         
         
-                        <p style="margin-top: max(35%, 400px); position: relative;">
+                        <p style="margin-top: max(35%, 475px); position: relative;">
                             In Rust zijn er skins voor bijna elk voorwerp. Sommige skins kan je kopen, ruilen of verkopen en
                             anderen
                             niet. Sinds de opgang van Twitch drops zijn er meer en meer veranderingen aan skins, er worden
@@ -165,6 +163,85 @@
                             bezoeken.
                         </p>
                     </div>
+
+                     <!-- Socials menu: -->
+                    <footer>
+                        <nav class="socials-menu">
+                            <h1 class="socials-title">Socials</h1>
+                            <div class="socials">
+                                <div class="socials-box">
+                                    Rust
+                                    <br />
+                                    <a href="https://rust.facepunch.com/" target="_blank">
+                                        <img
+                                            class="socials-logo"
+                                            src="images/Rust_Logo.png"
+                                            alt="Rust logo"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="socials-box">
+                                    Rust op Steam
+                                    <br />
+                                    <a
+                                        href="https://store.steampowered.com/app/252490/Rust/"
+                                        target="_blank"
+                                    >
+                                        <img
+                                            class="socials-logo"
+                                            src="images/Steam_Logo.png"
+                                            alt="Steam logo"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="socials-box">
+                                    Rust op Reddit
+                                    <br />
+                                    <a href="https://www.reddit.com/r/playrust/" target="_blank">
+                                        <img
+                                            class="socials-logo"
+                                            src="images/Reddit_Logo.png"
+                                            alt="Reddit logo"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="socials-box">
+                                    Rust op Twitter
+                                    <br />
+                                    <a href="https://twitter.com/playrust" target="_blank">
+                                        <img
+                                            class="socials-logo"
+                                            src="images/Twitter_Logo.png"
+                                            alt="Twitter logo"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="socials-box">
+                                    Facepunch
+                                    <br />
+                                    <a href="https://facepunch.com/" target="_blank">
+                                        <img
+                                            class="socials-logo"
+                                            src="images/Facepunch_Logo.png"
+                                            alt="Facepunch logo"
+                                        />
+                                    </a>
+                                </div>
+
+                                <div class="socials-box">
+                                    Facepunch&nbsp;op YouTube
+                                    <br />
+                                    <a href="https://www.youtube.com/c/fcpnch" target="_blank">
+                                        <img
+                                            class="socials-logo"
+                                            src="images/YouTube_Logo.png"
+                                            alt="YouTube logo"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </nav>
+                    </footer>
                 </div>
             </div>
         </div>
@@ -173,11 +250,13 @@
     <script>
         var slides = document.querySelectorAll(".slide");
         var btns = document.querySelectorAll(".btn");
-        var btnRight = document.querySelectorAll(".btnRight");
-        var btnLeft = document.querySelectorAll(".btnLeft");
-        let currentSlide = 1;
-        let i = 1;
-
+        var btnRight = document.querySelector(".btnRight");
+        var btnLeft = document.querySelector(".btnLeft");
+        let currentSlide = 0;
+        let i = currentSlide;
+        let delay = 1000;
+        let repeaterActive = true;
+        
         // Javascript voor slideshow manuele navigatie
         var manualNav = function (manual) {
             slides.forEach((slide) => {
@@ -194,25 +273,39 @@
 
         btns.forEach((btn, i) => {
             btn.addEventListener("click", () => {
+                repeaterActive = false;
                 manualNav(i);
                 currentSlide = i;
             });
         });
 
-        btnLeft.forEach((btn, i) => {
-            btnLeft.addEventListener("click", () => {
-                i++;
+        btnLeft.addEventListener("click", () => {
+                repeaterActive = false;
+                if (i <= 0) {
+                    i = slides.length - 1;
+                }
+
+                else {
+                    i--;
+                }
+                
                 manualNav(i);
                 currentSlide = i;
-            });
         });
 
-        btnRight.forEach((btn, i) => {
-            btnRight.addEventListener("click", () => {
-                i--;
+        btnRight.addEventListener("click", () => {
+                repeaterActive = false;
+
+                if (i >= slides.length - 1) {
+                    i = 0;
+                }
+
+                else {
+                    i++;
+                }
+
                 manualNav(i);
                 currentSlide = i;
-            });
         });
 
         // Javascript voor slideshow automatische navigatie
@@ -220,30 +313,36 @@
             let active = document.getElementsByClassName("active");
 
             var repeater = () => {
-                setTimeout(function () {
-                    [...active].forEach((activeSlide) => {
-                        activeSlide.classList.remove("active");
-                    });
-                    i = currentSlide;
-                    slides[i].classList.add("active");
-                    btns[i].classList.add("active");
-                    i++;
+                    setTimeout(function () {
+                            if (repeaterActive) {
+                                [...active].forEach((activeSlide) => {
+                                activeSlide.classList.remove("active");
+                                });
+                                i = currentSlide;
+                                slides[i].classList.add("active");
+                                btns[i].classList.add("active");
+                                i++;
 
-                    if (slides.length == i) {
-                        i = 0;
-                    }
+                                if (slides.length == i) {
+                                    i = 0;
+                                }
 
-                    if (i >= slides.length) {
-                        return;
-                    }
+                                if (i >= slides.length) {
+                                    return;
+                                }
 
-                    currentSlide = i;
-                    repeater();
-                }, 5000);
+                                currentSlide = i;
+
+                            }
+
+                            repeaterActive = true;
+                            repeater();
+                    }, delay);
             };
             repeater();
         };
         repeat();
+
     </script>
 </html>
 

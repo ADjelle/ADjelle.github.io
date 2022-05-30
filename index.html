@@ -15,7 +15,7 @@
 		<!-- Interne CSS: -->
 		<style>
 			video {
-				bottom: 50px;
+				bottom: 100px;
 				left: 150px;
 				position: fixed;
 				max-height: 65%;
@@ -23,6 +23,16 @@
 			}
 
 			@media only screen and (max-width: 900px) {
+				img.background-img {
+					object-position: right;
+				}
+
+				video {
+					left: initial;
+				}
+			}
+
+			@media only screen and (min-height: 1100px) and (min-width: 900px) and (max-width: 1280px) {
 				img.background-img {
 					object-position: right;
 				}
