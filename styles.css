@@ -22,6 +22,7 @@
 	font-size: 18px;
 }
 
+/* Opmaak voor de body */
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
@@ -33,24 +34,29 @@ body {
 	color: var(--clr-white);
 }
 
+/* Paragrafen */
 p {
 	font-style: fantasy, Arial;
 	margin: 0 auto;
 	color: var(--clr-white);
 }
 
+/* Links */
 a {
 	color: yellow;
 }
 
+/* Hover effect van links */
 a:hover {
 	color: var(--clr-selected);
 }
 
+/* Info bij hover */
 abbr {
 	color: whitesmoke;
 }
 
+/* Hover effect van info bij hover */
 abbr:hover {
 	color: var(--clr-selected);
 }
@@ -370,6 +376,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	top: 25px;
 }
 
+/* Hover effecten van de navigatie */
 .img-slider .navigation .btn:hover {
 	background-color: rgba(255, 255, 255, 0.5);
 }
@@ -382,6 +389,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Button van de actieve slide */
 .img-slider .navigation .btn.active {
 	background-color: var(--clr-light-red);
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
@@ -407,7 +415,7 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	font-size: 24px;
 }
 
-/* Media queries voor beter uitzicht van de website */
+/* Media queries voor beter uitzicht van de website op mobiele apparaten */
 
 @media only screen and (max-width: 700px) {
 	:root {
