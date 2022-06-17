@@ -522,4 +522,12 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	div.wrapper .wrapper-background .background-title {
 		font-size: 70px;
 	}
+
+	.img-slider .btnRight {
+		margin-left: 100%;
+	}
+
+	.img-slider .btnLeft {
+		margin-right: 100%;
+	}
 }
