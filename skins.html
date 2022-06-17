@@ -16,13 +16,14 @@
 <body id="overflow-hidden">
     <header>
         <nav class="nav-bar">
+            <!-- Mobiele navigatie: -->
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
             </label>
             <ul>
-                <li>
-                    <a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
+                <li id="nav-logo">
+                    <a href="https://rust.facepunch.com/" target="_blank">
                         <img width="64px" style="vertical-align: bottom;" src="images/Rust_Logo.png" alt="Rust Logo">
                     </a>
                 </li>
@@ -38,6 +39,9 @@
                 </li>
                 <li>
                     <a class="selected" href="skins.html" target="_self">Skins</a>
+                </li>
+                <li>
+                    <a href="suggesties.html" target="_self">Suggesties</a>
                 </li>
             </ul>
         </nav>
@@ -246,8 +250,8 @@
         </div>
     </body>
     
-    <!-- Javascript voor de slideshow -->
-    <script>
+   <!-- Javascript voor de slideshow -->
+   <script>
         var slides = document.querySelectorAll(".slide");
         var btns = document.querySelectorAll(".btn");
         var btnRight = document.querySelector(".btnRight");
@@ -332,7 +336,6 @@
                                 }
 
                                 currentSlide = i;
-
                             }
 
                             repeaterActive = true;
@@ -342,7 +345,6 @@
             repeater();
         };
         repeat();
-
     </script>
 </html>
 

@@ -91,6 +91,7 @@ header nav.nav-bar ul li {
 	padding-left: min(25px, 1rem);
 	list-style: none;
 	display: inline-block;
+	transition: all 0.15s ease-out;
 }
 
 header nav.nav-bar ul li a {
@@ -100,7 +101,14 @@ header nav.nav-bar ul li a {
 	transition: all 0.15s ease-out;
 }
 
-/* Onderlijn hover effect van het navigatiemenu */
+/* Hover effect van het navigatiemenu */
+
+header nav.nav-bar ul li:hover {
+	transform: translateY(-3px);
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
 header nav.nav-bar ul li:hover a {
 	font-size: calc(var(--font-default-size) + 1px);
 	padding-bottom: 5px;
@@ -121,8 +129,12 @@ header nav.nav-bar ul li img {
 	max-width: 30px;
 }
 
-header nav.nav-bar ul li:hover a#nav-logo {
+header nav.nav-bar ul li#nav-logo:hover a {
 	border: 0;
+}
+
+header nav.nav-bar ul li#nav-logo:hover {
+	transform: translateY(0);
 }
 
 /* Wrapper: */
@@ -459,6 +471,14 @@ footer nav.socials-menu div.socials-box:hover img.socials-logo {
 	header nav.nav-bar ul li:hover a {
 		border: 0;
 		font-size: var(--font-default-size);
+	}
+
+	header nav.nav-bar ul li#nav-logo:hover {
+		padding-left: 0;
+	}
+
+	header nav.nav-bar ul li:hover {
+		transform: translateY(0);
 	}
 
 	header nav.nav-bar ul li {

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Externe CSS: -->
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
+
+		<!-- Interne CSS: -->
+		<style>
+			iframe {
+				margin: 0 auto;
+				max-width: 90%;
+			}
+		</style>
+		<title>Suggesties</title>
+	</head>
+	<body id="overflow-hidden">
+		<!-- Navigatie menu: -->
+		<header>
+			<nav class="nav-bar">
+				<!-- Mobiele navigatie: -->
+				<input type="checkbox" id="check" />
+				<label for="check" class="checkbtn">
+					<i class="fas fa-bars"></i>
+				</label>
+				<ul>
+					<li id="nav-logo">
+						<a href="https://rust.facepunch.com/" target="_blank">
+							<img
+								width="64px"
+								style="vertical-align: bottom"
+								src="images/Rust_Logo.png"
+								alt="Rust Logo"
+							/>
+						</a>
+					</li>
+
+					<li>
+						<a href="index.html" target="_self">Home</a>
+					</li>
+					<li>
+						<a href="over.html" target="_self">Over</a>
+					</li>
+					<li>
+						<a href="tipsNtricks.html" target="_self">
+							Tips&nbsp;en&nbsp;Tricks
+						</a>
+					</li>
+					<li>
+						<a href="skins.html" target="_self">Skins</a>
+					</li>
+					<li>
+						<a class="selected" href="suggesties.html" target="_self">
+							Suggesties
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Google forms formulier importeren via een iframe: -->
+		<iframe
+			src="https://docs.google.com/forms/d/e/1FAIpQLSf4MWQtPqxbUUvWDVtXu0EWtt8qtHcIBj_VbfWMbFY8ZPzGaA/viewform?embedded=true"
+			width="800"
+			height="600"
+			frameborder="0"
+			marginheight="0"
+			marginwidth="0"
+		>
+			Laden…
+		</iframe>
+	</body>
+</html>

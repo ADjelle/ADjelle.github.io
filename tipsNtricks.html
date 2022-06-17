@@ -34,7 +34,7 @@
 			#oil-rig,
 			#outpost,
 			#tier1 {
-				background-position: center;
+				background-position: left;
 				background-size: contain;
 				background-repeat: no-repeat;
 			}
@@ -54,13 +54,16 @@
 			#tier1 {
 				background-image: url(images/Tier\ 1\ workbench.jpg);
 				background-size: cover;
+				background-position: center;
 			}
 			/* Voor mobiele apparaten */
 			@media only screen and (max-width: 475px) {
-				table.monuments {
+				table.monuments td {
 					font-size: smaller;
-					margin-left: 0;
-					padding-right: 40px;
+				}
+
+				img.background-img {
+					object-position: left;
 				}
 			}
 		</style>
@@ -71,13 +74,14 @@
 		<!-- Navigatie menu: -->
 		<header>
 			<nav class="nav-bar">
+				<!-- Mobiele navigatie: -->
 				<input type="checkbox" id="check" />
 				<label for="check" class="checkbtn">
 					<i class="fas fa-bars"></i>
 				</label>
 				<ul>
-					<li>
-						<a id="nav-logo" href="https://rust.facepunch.com/" target="_blank">
+					<li id="nav-logo">
+						<a href="https://rust.facepunch.com/" target="_blank">
 							<img
 								width="64px"
 								style="vertical-align: bottom"
@@ -100,6 +104,9 @@
 					</li>
 					<li>
 						<a href="skins.html" target="_self">Skins</a>
+					</li>
+					<li>
+						<a href="suggesties.html" target="_self">Suggesties</a>
 					</li>
 				</ul>
 			</nav>
